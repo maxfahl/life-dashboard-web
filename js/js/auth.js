@@ -1,4 +1,4 @@
-import {SUPABASE_URL, SUPABASE_KEY, APP_URL} from './config.js';
+import {SUPABASE_URL, SUPABASE_KEY, APP_URL} from '../../js/js/config.js';
 let session=null;
 export const getSession=()=>session;
 export function parseSession(){const raw=location.hash.slice(1),h=new URLSearchParams(raw),q=new URLSearchParams(location.search);const access=h.get('access_token')||localStorage.getItem('life_access'),refresh=h.get('refresh_token')||localStorage.getItem('life_refresh');if(access){localStorage.setItem('life_access',access);if(refresh)localStorage.setItem('life_refresh',refresh);if(h.get('access_token'))history.replaceState({},'',location.pathname+'#/budget/today');session={access,refresh}}return session}
