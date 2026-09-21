@@ -1,5 +1,5 @@
-import {api} from '../js/api.js';
-import {signOut} from '../js/auth.js';
+import {api} from '../../js/js/api.js';
+import {signOut} from '../../js/js/auth.js';
 let state={tx:[],cycle:null,inputs:[],categories:[],plans:[],docs:[],sync:[],cycles:[],subs:[],balances:[]};
 const root=document.getElementById('root');const money=new Intl.NumberFormat('sv-SE',{style:'currency',currency:'SEK',maximumFractionDigits:2});
 const currentPage=()=>{const p=location.hash.match(/^#\/budget\/([^/]+)/)?.[1]||'today';return ['today','transactions','decisions','subscriptions','plans','history','about'].includes(p)?p:'today'};
